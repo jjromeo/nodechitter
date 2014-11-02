@@ -1,0 +1,13 @@
+var expect = require('chai').expect;
+var should = require('chai').should;
+var server = require('../server.js');
+var Browser = require('zombie');
+browser = new Browser();
+browser.visit('http://localhost:3000/', function(){
+
+        it ('at least works', function(done){
+                expect(browser.text).to.contain('world');
+                done();
+            });
+});
+
